@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="The Puppet String"
 config/description="A game jam prototype about pulling strings, then losing them."
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="uid://5tp0aonxkuhv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

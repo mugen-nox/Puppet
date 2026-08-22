@@ -1,6 +1,7 @@
+VideoStreamPlayer
+Control
 HSlider
 TextureRect
-Control
 Button
 AudioStreamPlayer
 Node
