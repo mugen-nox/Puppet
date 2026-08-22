@@ -1,2 +1,12 @@
+AudioStreamPlayer
+Node
+AudioStreamPlayer2D
+Camera2D
+PointLight2D
+DirectionalLight2D
+CanvasModulate
 TextureRect
+Control
+Button
+Sprite2D
 Panel

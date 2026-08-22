@@ -1,1 +1,2 @@
-res://scenes/main.tscn
+res://scripts/sfx.gd
+res://scripts/controllvl1.gd

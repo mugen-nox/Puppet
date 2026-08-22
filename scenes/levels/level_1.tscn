@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bwedoehn4kaep"]
+
+[ext_resource type="Texture2D" uid="uid://k6dfqs5eb25a" path="res://scenes/levels/dimbackground.png" id="1_6iamk"]
+[ext_resource type="Script" uid="uid://c6killsv38k3" path="res://scripts/controllvl1.gd" id="2_6761a"]
+[ext_resource type="Texture2D" uid="uid://bp63y7peqpu1q" path="res://scenes/levels/pixil-frame-2.png" id="2_nsrm0"]
+[ext_resource type="Script" uid="uid://di18g46ytbhri" path="res://scripts/sfx.gd" id="4_6761a"]
+[ext_resource type="AudioStream" uid="uid://jmdioi65gle4" path="res://audio/sfx/light_switch_turn_on.wav" id="4_x42e6"]
+
+[sub_resource type="GDScript" id="GDScript_6761a"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[node name="level1" type="Node2D" unique_id=2113495282]
+script = SubResource("GDScript_6761a")
+
+[node name="Control" type="Control" parent="." unique_id=1487640176]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+pivot_offset = Vector2(576, 324)
+script = ExtResource("2_6761a")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1321152012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6iamk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Control/TextureRect" unique_id=1983609572]
+color = Color(0.31370962, 0.30858463, 0.316205, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="Control/TextureRect" unique_id=1431956964]
+position = Vector2(577.49994, 321.5)
+scale = Vector2(1.1240233, 1.1206292)
+color = Color(0.78431374, 0.7058824, 0, 1)
+energy = 2.0
+texture = ExtResource("2_nsrm0")
+
+[node name="Camera2D" type="Camera2D" parent="Control" unique_id=2095084735]
+position = Vector2(576, 324)
+
+[node name="SwitchSfx" type="Node" parent="Control" unique_id=314043479]
+script = ExtResource("4_6761a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/SwitchSfx" unique_id=995988516]
+stream = ExtResource("4_x42e6")
