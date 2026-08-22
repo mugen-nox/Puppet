@@ -21,6 +21,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_wmoy5")
@@ -31,7 +33,8 @@ stretch_mode = 4
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.9850001
-offset_bottom = -0.2800293
+offset_top = 3.0
+offset_bottom = 2.7199707
 
 [node name="Title" type="TextureRect" parent="Control" unique_id=445591808]
 layout_mode = 1
