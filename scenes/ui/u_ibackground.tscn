@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cykqn3id7oux7"]
+
+[ext_resource type="Texture2D" uid="uid://dpp715mqb0fll" path="res://scenes/levels/background.png" id="1_5dj1c"]
+
+[node name="UIbackground" type="TextureRect" unique_id=511638434]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -843.0
+offset_top = -413.0
+offset_right = 757.0
+offset_bottom = 475.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5dj1c")

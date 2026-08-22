@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dof4btcxfjyxs"]
+
+[ext_resource type="PackedScene" uid="uid://cykqn3id7oux7" path="res://scenes/ui/u_ibackground.tscn" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://diixd8j8vi1rg" path="res://scenes/ui/UI.png" id="2_sugp2"]
+
+[node name="Main" type="Node2D" unique_id=1191985880]
+
+[node name="UIbackground" parent="." unique_id=511638434 instance=ExtResource("1_0wfyh")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Ui" type="Sprite2D" parent="UIbackground" unique_id=1911404019]
+position = Vector2(970.00006, 1010)
+scale = Vector2(5.5581393, 5.34375)
+texture = ExtResource("2_sugp2")
