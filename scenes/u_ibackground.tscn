@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cykqn3id7oux7"]
+
+[ext_resource type="Script" uid="uid://tr2isjrgs7po" path="res://scripts/title.gd" id="1_am4lp"]
+[ext_resource type="Texture2D" uid="uid://yedf6d8fac4v" path="res://scenes/ui/background_image.tres" id="1_wmoy5"]
+[ext_resource type="Texture2D" uid="uid://mncnl7mjukdk" path="res://scenes/ui/In_dependant_Puppet.png" id="3_0kylj"]
+[ext_resource type="Texture2D" uid="uid://d2jwjteeejqxg" path="res://scenes/ui/New_game.png" id="4_ckljb"]
+[ext_resource type="Texture2D" uid="uid://8o4naoqg26i8" path="res://scenes/ui/Settings.png" id="5_5snf1"]
+[ext_resource type="Texture2D" uid="uid://c7pdwotclr5lu" path="res://scenes/ui/Quit.png" id="6_jryim"]
+
+[node name="Menu" type="Control" unique_id=252823744]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_am4lp")
+
+[node name="Background" type="TextureRect" parent="." unique_id=796814831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wmoy5")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="." unique_id=184734753]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.9850001
+offset_bottom = -0.2800293
+
+[node name="Title" type="TextureRect" parent="Control" unique_id=445591808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 118.0
+offset_right = -549.0
+offset_bottom = -321.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0kylj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Start the game" type="Button" parent="Control" unique_id=1435445944]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 300.0
+offset_right = -760.0
+offset_bottom = -227.0
+icon = ExtResource("4_ckljb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Settings" type="Button" parent="Control" unique_id=1933797875]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 387.0
+offset_right = -760.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("5_5snf1")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Quit" type="Button" parent="Control" unique_id=2100619556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 482.0
+offset_right = -753.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("6_jryim")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Control/Start the game" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]

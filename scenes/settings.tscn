@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cal7b85h4okuk"]
+
+[ext_resource type="Script" uid="uid://cxhv0n4u1jbdb" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[node name="Settings" type="Control" unique_id=627669866]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="Setting UI" type="TextureRect" parent="." unique_id=979257569]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Music_settings" type="HSlider" parent="." unique_id=326375353]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+
+[node name="SFX_settings" type="HSlider" parent="." unique_id=136266611]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0

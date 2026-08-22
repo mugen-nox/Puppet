@@ -7,14 +7,14 @@ extends Control
 
 
 
-@export var dark_duration: float = 1.2        # how long it stays dark first
+@export var dark_duration: float = 1.0        # how long it stays dark first
 @export var transition_duration: float = 2.4  # camera zoom duration
 @export var target_light_energy: float = 2.5
 @export var zoom_amount_px: float = -300.0       # how many px "in" to zoom
 @export var base_width: float = 1152.0         # your project's base resolution width
 
 @export var light_steps: int = 4               # number of discrete flicks (match sfx hit count)
-@export var light_step_interval: float = 0.4  # pause between flicks (match sfx interval)
+@export var light_step_interval: float = 0.45  # pause between flicks (match sfx interval)
 
 func _ready() -> void:
 	point_light.energy = 0.0

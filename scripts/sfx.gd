@@ -11,7 +11,7 @@ func play(stream: AudioStream) -> void:
 
 ## Plays the same sound 4 times in a row, ramping volume up each time
 ## so the last one lands the loudest.
-func play_ramp(stream: AudioStream, times: int = 4, interval: float = 0.4,
+func play_ramp(stream: AudioStream, times: int = 4, interval: float = 0.45,
 		quietest_db: float = -10.0, loudest_db: float = 0.0) -> void:
 	for i in range(times):
 		var t: float = float(i) / float(max(times - 1, 1))
