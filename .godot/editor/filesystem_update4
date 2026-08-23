@@ -1,0 +1,6 @@
+res://scenes/loading_screen.tscn
+res://scenes/u_ibackground.tscn
+res://scenes/settings.tscn
+res://scripts/settings.gd
+res://scenes/hover_sprite.gd
+res://scripts/controllvl1.gd
