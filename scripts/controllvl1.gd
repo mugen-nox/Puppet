@@ -17,8 +17,6 @@ extends Control
 @export var light_step_interval: float = 0.45  # pause between flicks (match sfx interval)
 
 func _ready() -> void:
-<<<<<<< HEAD
-e235e5db58b0dd4c4ff8f9d089b1c29787f337d7
 	if GameState.intro_played:
 		_set_final_state_instantly()
 		return
