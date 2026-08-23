@@ -17,9 +17,21 @@ extends Control
 @export var light_step_interval: float = 0.45  # pause between flicks (match sfx interval)
 
 func _ready() -> void:
+	$TextureRect2/Score.text = "Score: %d" % GameState.score
+	if GameState.intro_played:
+		_set_final_state_instantly()
+		return
 	point_light.energy = 0.0
 	camera.zoom = Vector2.ONE
 	_play_intro()
+
+## Called on every reload after the first — no dark wait, no flicker,
+## no sfx, no zoom animation. Just land directly in the "already lit"
+## state so the goal-triggered reload doesn't replay the intro.
+func _set_final_state_instantly() -> void:
+	point_light.energy = target_light_energy
+	var target_zoom_value := (base_width - zoom_amount_px) / base_width
+	camera.zoom = Vector2(target_zoom_value, target_zoom_value)
 
 func _play_intro() -> void:
 	await get_tree().create_timer(dark_duration).timeout
@@ -35,6 +47,8 @@ func _play_intro() -> void:
 	switch_sfx.play_ramp(preload("res://audio/sfx/light_switch_turn_on.wav"),
 		light_steps, light_step_interval)
 	_flicker_light_on(light_steps, light_step_interval)
+
+	GameState.intro_played = true
 
 ## Jumps light energy in discrete steps rather than fading smoothly,
 ## so it reads as flicks/pulses in sync with the sfx hits.

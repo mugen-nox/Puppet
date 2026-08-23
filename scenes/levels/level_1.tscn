@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bp63y7peqpu1q" path="res://scenes/levels/pixil-frame-2.png" id="2_nsrm0"]
 [ext_resource type="Script" uid="uid://di18g46ytbhri" path="res://scripts/sfx.gd" id="4_6761a"]
 [ext_resource type="AudioStream" uid="uid://jmdioi65gle4" path="res://audio/sfx/light_switch_turn_on.wav" id="4_x42e6"]
+[ext_resource type="Texture2D" uid="uid://b8a2ijaa0y3p3" path="res://art/pixil-layer-Background(1).png" id="6_dga24"]
+[ext_resource type="PackedScene" uid="uid://bkosfkb325yrc" path="res://scenes/marionette.tscn" id="6_sk5k4"]
+[ext_resource type="Script" uid="uid://bbif6dh2rh3u4" path="res://scripts/goal_area.gd" id="8_dga24"]
+[ext_resource type="Texture2D" uid="uid://c85oklkouwk34" path="res://art/pixil-layer-Background.png" id="8_s8va5"]
 
 [sub_resource type="GDScript" id="GDScript_6761a"]
 script/source = "extends Node2D
@@ -19,6 +23,21 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 "
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifeun"]
+radius = 52.086468
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifeun"]
+size = Vector2(1168, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8va5"]
+size = Vector2(9, 548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dga24"]
+size = Vector2(20, 537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxy0u"]
+size = Vector2(1145, 27)
 
 [node name="level1" type="Node2D" unique_id=2113495282]
 script = SubResource("GDScript_6761a")
@@ -60,3 +79,71 @@ script = ExtResource("4_6761a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/SwitchSfx" unique_id=995988516]
 stream = ExtResource("4_x42e6")
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=675409443]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 84.0
+offset_right = -743.0
+offset_bottom = -501.0
+texture = ExtResource("6_dga24")
+
+[node name="Score" type="Label" parent="Control/TextureRect2" unique_id=1807862453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -123.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="marionette" parent="." unique_id=864754149 instance=ExtResource("6_sk5k4")]
+position = Vector2(714, 307)
+
+[node name="Goal" type="Area2D" parent="." unique_id=531859257]
+script = ExtResource("8_dga24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1159362368]
+shape = SubResource("CircleShape2D_ifeun")
+
+[node name="Xmark" type="Sprite2D" parent="Goal" unique_id=913285374]
+texture = ExtResource("8_s8va5")
+
+[node name="GoalLight" type="PointLight2D" parent="Goal" unique_id=1176549153]
+color = Color(1, 0.08627451, 0.015686275, 1)
+texture = ExtResource("8_s8va5")
+
+[node name="Bounds" type="Node2D" parent="." unique_id=897197464]
+
+[node name="Top" type="StaticBody2D" parent="Bounds" unique_id=1777804065]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Top" unique_id=262110021]
+position = Vector2(583, 71)
+shape = SubResource("RectangleShape2D_ifeun")
+
+[node name="Right" type="StaticBody2D" parent="Bounds" unique_id=898377251]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Right" unique_id=1461648883]
+position = Vector2(1010, 349)
+shape = SubResource("RectangleShape2D_s8va5")
+
+[node name="Left" type="StaticBody2D" parent="Bounds" unique_id=1725912877]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Left" unique_id=269468042]
+position = Vector2(138, 349)
+shape = SubResource("RectangleShape2D_dga24")
+
+[node name="Bottom" type="StaticBody2D" parent="Bounds" unique_id=1412091706]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Bottom" unique_id=949642263]
+position = Vector2(611, 561)
+shape = SubResource("RectangleShape2D_qxy0u")
