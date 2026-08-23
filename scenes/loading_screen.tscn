@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://5tp0aonxkuhv"]
+
+[ext_resource type="VideoStream" uid="uid://cmuvip4u6u5ew" path="res://loading.ogv" id="1_ep5rh"]
+[ext_resource type="Script" uid="uid://cjr4skktmkty2" path="res://scenes/loading_screen.gd" id="1_hprjd"]
+
+[node name="LoadingScreen" type="Control" unique_id=2097248636]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hprjd")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=688538562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1112.1611
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_ep5rh")
+autoplay = true
+expand = true

@@ -4,7 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://mncnl7mjukdk" path="res://scenes/ui/In_dependant_Puppet.png" id="3_0kylj"]
 [ext_resource type="Texture2D" uid="uid://d2jwjteeejqxg" path="res://scenes/ui/New_game.png" id="4_ckljb"]
 [ext_resource type="Texture2D" uid="uid://8o4naoqg26i8" path="res://scenes/ui/Settings.png" id="5_5snf1"]
+[ext_resource type="Texture2D" uid="uid://bqvngkepvfkjs" path="res://scenes/ui/ngh.png" id="5_ckljb"]
 [ext_resource type="Texture2D" uid="uid://c7pdwotclr5lu" path="res://scenes/ui/Quit.png" id="6_jryim"]
+[ext_resource type="Script" uid="uid://c4fu08hen7eb7" path="res://scenes/hover_sprite.gd" id="6_vi17q"]
+[ext_resource type="Texture2D" uid="uid://drepmvsf10818" path="res://scenes/ui/sh.png" id="7_jryim"]
+[ext_resource type="Texture2D" uid="uid://pl3qc7adqjv1" path="res://scenes/ui/qh.png" id="9_vi17q"]
+
+[sub_resource type="GDScript" id="GDScript_0kylj"]
+script/source = "extends Control
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/levels/level_1.tscn\")
+
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/settings.tscn\")
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
 
 [sub_resource type="GDScript" id="GDScript_0kylj"]
 script/source = "extends Control
@@ -33,6 +50,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_gq51w")
@@ -43,7 +62,8 @@ stretch_mode = 4
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.9850001
-offset_bottom = -0.2800293
+offset_top = 3.0
+offset_bottom = 2.7199707
 
 [node name="Title" type="TextureRect" parent="Control" unique_id=445591808]
 layout_mode = 1
@@ -73,6 +93,19 @@ icon = ExtResource("4_ckljb")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("6_vi17q")
+
+[node name="HoverSprite" type="TextureRect" parent="Control/Start the game" unique_id=311263084]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_ckljb")
+expand_mode = 2
 
 [node name="Settings" type="Button" parent="Control" unique_id=1933797875]
 layout_mode = 1
@@ -89,6 +122,19 @@ icon = ExtResource("5_5snf1")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("6_vi17q")
+
+[node name="HoverSprite" type="TextureRect" parent="Control/Settings" unique_id=693629551]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_jryim")
+expand_mode = 2
 
 [node name="Quit" type="Button" parent="Control" unique_id=2100619556]
 layout_mode = 1
@@ -105,6 +151,21 @@ icon = ExtResource("6_jryim")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("6_vi17q")
+
+[node name="HoverSprite" type="TextureRect" parent="Control/Quit" unique_id=829718884]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.094000004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.009999752
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_vi17q")
+expand_mode = 2
 
 [connection signal="pressed" from="Control/Start the game" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
