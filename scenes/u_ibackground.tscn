@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://8o4naoqg26i8" path="res://scenes/ui/Settings.png" id="5_5snf1"]
 [ext_resource type="Texture2D" uid="uid://bqvngkepvfkjs" path="res://scenes/ui/ngh.png" id="5_ckljb"]
 [ext_resource type="Texture2D" uid="uid://c7pdwotclr5lu" path="res://scenes/ui/Quit.png" id="6_jryim"]
+[ext_resource type="Script" uid="uid://c4fu08hen7eb7" path="res://scenes/hover_sprite.gd" id="6_vi17q"]
+[ext_resource type="Texture2D" uid="uid://drepmvsf10818" path="res://scenes/ui/sh.png" id="7_jryim"]
+[ext_resource type="Texture2D" uid="uid://pl3qc7adqjv1" path="res://scenes/ui/qh.png" id="9_vi17q"]
 
 [node name="Menu" type="Control" unique_id=252823744]
 layout_mode = 3
@@ -65,14 +68,19 @@ icon = ExtResource("4_ckljb")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("6_vi17q")
 
 [node name="HoverSprite" type="TextureRect" parent="Control/Start the game" unique_id=311263084]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 2.0
-offset_right = 346.0
-offset_bottom = 101.12121
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_ckljb")
+expand_mode = 2
 
 [node name="Settings" type="Button" parent="Control" unique_id=1933797875]
 layout_mode = 1
@@ -89,11 +97,19 @@ icon = ExtResource("5_5snf1")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("6_vi17q")
 
 [node name="HoverSprite" type="TextureRect" parent="Control/Settings" unique_id=693629551]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_jryim")
+expand_mode = 2
 
 [node name="Quit" type="Button" parent="Control" unique_id=2100619556]
 layout_mode = 1
@@ -110,11 +126,21 @@ icon = ExtResource("6_jryim")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("6_vi17q")
 
 [node name="HoverSprite" type="TextureRect" parent="Control/Quit" unique_id=829718884]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.094000004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.009999752
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_vi17q")
+expand_mode = 2
 
 [connection signal="pressed" from="Control/Start the game" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
