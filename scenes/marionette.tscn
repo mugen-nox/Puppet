@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://bkosfkb325yrc"]
+
+[ext_resource type="Script" uid="uid://besv3aediysrq" path="res://scripts/control_bar.gd" id="1_egby3"]
+[ext_resource type="Texture2D" uid="uid://m4oog0jqjmnl" path="res://art/puppet/head.png" id="1_h0xvj"]
+[ext_resource type="Script" uid="uid://dxwcjmx1k20fs" path="res://scripts/limb.gd" id="1_q2qjd"]
+[ext_resource type="Texture2D" uid="uid://b32giontl64kp" path="res://art/puppet/pixil-frame-0.png" id="2_gc1dw"]
+[ext_resource type="Texture2D" uid="uid://7vj2k3m3s0ea" path="res://art/puppet/torso.png" id="2_q2qjd"]
+[ext_resource type="Texture2D" uid="uid://dxl5jv78bp2rr" path="res://art/puppet/left_hand.png" id="3_4l7pi"]
+[ext_resource type="Texture2D" uid="uid://b5neywoi0fk5v" path="res://art/puppet/right_hand.png" id="4_egby3"]
+[ext_resource type="Texture2D" uid="uid://dlrkox1lyaj3g" path="res://art/puppet/right_leg.png" id="5_gc1dw"]
+[ext_resource type="Texture2D" uid="uid://dgmb74mrexpbl" path="res://art/puppet/left_leg.png" id="6_g43mi"]
+[ext_resource type="Script" uid="uid://b3aq668043m2k" path="res://scripts/string_manager.gd" id="11_gvx0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifeun"]
+size = Vector2(52, 48)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifeun"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmmkb"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1x3kl"]
+radius = 3.6052933
+height = 30.519653
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r3nmj"]
+radius = 3.3813934
+height = 28.820953
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w2s06"]
+radius = 4.120682
+height = 28.017868
+
+[node name="marionette" type="Node2D" unique_id=864754149]
+light_mask = 2
+visibility_layer = 2
+
+[node name="controlbar" type="AnimatableBody2D" parent="." unique_id=951980204]
+position = Vector2(-72, -54)
+rotation = 0.7853982
+script = ExtResource("1_egby3")
+
+[node name="controlbarS" type="Sprite2D" parent="controlbar" unique_id=1041641714]
+position = Vector2(-149, -62)
+texture = ExtResource("2_gc1dw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="controlbar" unique_id=1017076105]
+position = Vector2(-149, -62)
+shape = SubResource("RectangleShape2D_ifeun")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1562862716]
+position = Vector2(-120, 54)
+zoom = Vector2(2, 2)
+
+[node name="head" type="RigidBody2D" parent="." unique_id=1486627124]
+position = Vector2(-135, 51)
+script = ExtResource("1_q2qjd")
+string_joint_path = NodePath("../strings/Shead")
+
+[node name="headcollision" type="CollisionShape2D" parent="head" unique_id=655116191]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_ifeun")
+
+[node name="heads" type="Sprite2D" parent="head" unique_id=525315865]
+texture = ExtResource("1_h0xvj")
+offset = Vector2(1, 15)
+
+[node name="torso" type="RigidBody2D" parent="." unique_id=276721201]
+position = Vector2(-135, 59)
+script = ExtResource("1_q2qjd")
+string_joint_path = NodePath("../strings/Storso")
+
+[node name="torsocollision" type="CollisionShape2D" parent="torso" unique_id=616595382]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_bmmkb")
+
+[node name="torsos" type="Sprite2D" parent="torso" unique_id=1255104536]
+position = Vector2(0, 7)
+texture = ExtResource("2_q2qjd")
+offset = Vector2(1, 0)
+
+[node name="left_hand" type="RigidBody2D" parent="." unique_id=1864630767]
+position = Vector2(-129, 55)
+script = ExtResource("1_q2qjd")
+string_joint_path = NodePath("../strings/Slhand")
+
+[node name="lhandcollision" type="CollisionShape2D" parent="left_hand" unique_id=1069468904]
+position = Vector2(13, 7)
+rotation = -0.9948377
+shape = SubResource("CapsuleShape2D_1x3kl")
+
+[node name="lhands" type="Sprite2D" parent="left_hand" unique_id=2141337802]
+texture = ExtResource("3_4l7pi")
+offset = Vector2(-5, 11)
+
+[node name="right_hand" type="RigidBody2D" parent="." unique_id=1833543197]
+position = Vector2(-141, 55)
+script = ExtResource("1_q2qjd")
+string_joint_path = NodePath("../strings/Srhand")
+
+[node name="rhandcollision" type="CollisionShape2D" parent="right_hand" unique_id=959098191]
+position = Vector2(-12, 6)
+rotation = 0.9424778
+shape = SubResource("CapsuleShape2D_r3nmj")
+
+[node name="rhands" type="Sprite2D" parent="right_hand" unique_id=1734209798]
+texture = ExtResource("4_egby3")
+offset = Vector2(7, 11)
+
+[node name="right_leg" type="RigidBody2D" parent="." unique_id=246724274]
+position = Vector2(-138, 71)
+script = ExtResource("1_q2qjd")
+string_joint_path = NodePath("../strings/Srleg")
+
+[node name="rlegcollision" type="CollisionShape2D" parent="right_leg" unique_id=1337497240]
+position = Vector2(-4, 12)
+rotation = 0.27925268
+shape = SubResource("CapsuleShape2D_w2s06")
+
+[node name="rlegs" type="Sprite2D" parent="right_leg" unique_id=592982059]
+texture = ExtResource("5_gc1dw")
+offset = Vector2(3, -5)
+
+[node name="left_leg" type="RigidBody2D" parent="." unique_id=200688780]
+position = Vector2(-132, 71)
+script = ExtResource("1_q2qjd")
+string_joint_path = NodePath("../strings/Slleg")
+
+[node name="llegcollision" type="CollisionShape2D" parent="left_leg" unique_id=704932514]
+position = Vector2(4, 12)
+rotation = -0.27925268
+shape = SubResource("CapsuleShape2D_w2s06")
+
+[node name="llegs" type="Sprite2D" parent="left_leg" unique_id=724456628]
+texture = ExtResource("6_g43mi")
+offset = Vector2(-2, -5)
+
+[node name="joints" type="Node2D" parent="." unique_id=1086722527]
+
+[node name="headT" type="PinJoint2D" parent="joints" unique_id=466171727]
+position = Vector2(-135, 51)
+rotation = -1.5707964
+node_a = NodePath("../../torso")
+node_b = NodePath("../../head")
+
+[node name="rhandT" type="PinJoint2D" parent="joints" unique_id=855957031]
+position = Vector2(-141, 55)
+node_a = NodePath("../../torso")
+node_b = NodePath("../../right_hand")
+
+[node name="rlegT" type="PinJoint2D" parent="joints" unique_id=2036985963]
+position = Vector2(-138, 71)
+node_a = NodePath("../../torso")
+node_b = NodePath("../../right_leg")
+
+[node name="llegT" type="PinJoint2D" parent="joints" unique_id=590498199]
+position = Vector2(-132, 71)
+node_a = NodePath("../../torso")
+node_b = NodePath("../../left_leg")
+
+[node name="lhandT" type="PinJoint2D" parent="joints" unique_id=402228510]
+position = Vector2(-129, 55)
+node_a = NodePath("../../torso")
+node_b = NodePath("../../left_hand")
+
+[node name="strings" type="Node2D" parent="." unique_id=1428736250 node_paths=PackedStringArray("limbs")]
+unique_name_in_owner = true
+position = Vector2(-48, -129)
+script = ExtResource("11_gvx0s")
+limbs = [NodePath("../head"), NodePath("../torso"), NodePath("../left_hand"), NodePath("../right_hand"), NodePath("../left_leg"), NodePath("../right_leg")]
+
+[node name="Shead" type="DampedSpringJoint2D" parent="strings" unique_id=687742432]
+position = Vector2(-86, -75)
+node_a = NodePath("../../controlbar")
+node_b = NodePath("../../head")
+length = 90.0
+
+[node name="Slhand" type="DampedSpringJoint2D" parent="strings" unique_id=989457618]
+position = Vector2(-71, -90)
+node_a = NodePath("../../controlbar")
+node_b = NodePath("../../left_hand")
+length = 120.0
+rest_length = 120.0
+
+[node name="Srhand" type="DampedSpringJoint2D" parent="strings" unique_id=1548701484]
+position = Vector2(-101, -90)
+node_a = NodePath("../../controlbar")
+node_b = NodePath("../../right_hand")
+length = 120.0
+rest_length = 120.0
+
+[node name="Slleg" type="DampedSpringJoint2D" parent="strings" unique_id=990108552]
+position = Vector2(-101, -60)
+node_a = NodePath("../../controlbar")
+node_b = NodePath("../../left_leg")
+length = 300.0
+rest_length = 300.0
+stiffness = 1.0
+
+[node name="Srleg" type="DampedSpringJoint2D" parent="strings" unique_id=1082490752]
+position = Vector2(-71, -60)
+node_a = NodePath("../../controlbar")
+node_b = NodePath("../../right_leg")
+length = 300.0
+rest_length = 300.0
+stiffness = 1.0
+
+[node name="Storso" type="DampedSpringJoint2D" parent="strings" unique_id=142615895]
+position = Vector2(-86, -75)
+node_a = NodePath("../../controlbar")
+node_b = NodePath("../../torso")
+length = 110.0
+rest_length = 100.0

@@ -3,3 +3,11 @@ res://scripts/controllvl1.gd
 res://scenes/main.tscn
 res://scenes/u_ibackground.tscn
 res://scripts/title.gd
+res://scenes/marionette.tscn
+res://scripts/control_bar.gd
+res://scripts/limb.gd
+res://scenes/levels/level_1.tscn
+res://scripts/marionette.gd
+res://scripts/string_manager.gd
+res://scripts/goal_area.gd
+res://scripts/game_state.gd
