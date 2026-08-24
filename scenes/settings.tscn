@@ -47,4 +47,13 @@ offset_bottom = 51.0
 action_mode = 0
 text = "Back"
 
+[node name="VolumeSlider" type="HSlider" parent="." unique_id=1360703994]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 294.0
+offset_right = 527.0
+offset_bottom = 310.0
+max_value = 1.0
+step = 0.01
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

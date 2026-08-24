@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bkosfkb325yrc" path="res://scenes/marionette.tscn" id="6_sk5k4"]
 [ext_resource type="Script" uid="uid://bbif6dh2rh3u4" path="res://scripts/goal_area.gd" id="8_dga24"]
 [ext_resource type="Texture2D" uid="uid://c85oklkouwk34" path="res://art/pixil-layer-Background.png" id="8_s8va5"]
+[ext_resource type="AudioStream" uid="uid://crs2v8m5pbbcc" path="res://creak.wav" id="10_excbq"]
+[ext_resource type="AudioStream" uid="uid://bihqw25hxw40s" path="res://ambient.wav" id="10_iav0o"]
+[ext_resource type="Script" uid="uid://ckc61jsw8t6e1" path="res://scenes/levels/creak.gd" id="10_qxy0u"]
 
 [sub_resource type="GDScript" id="GDScript_6761a"]
 script/source = "extends Node2D
@@ -147,3 +150,13 @@ shape = SubResource("RectangleShape2D_dga24")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Bottom" unique_id=949642263]
 position = Vector2(611, 561)
 shape = SubResource("RectangleShape2D_qxy0u")
+
+[node name="ambient" type="AudioStreamPlayer" parent="." unique_id=1773690903]
+stream = ExtResource("10_iav0o")
+volume_db = -5.0
+autoplay = true
+
+[node name="creak" type="AudioStreamPlayer" parent="." unique_id=1188854656]
+stream = ExtResource("10_excbq")
+volume_db = -17.0
+script = ExtResource("10_qxy0u")
