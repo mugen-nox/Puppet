@@ -155,8 +155,10 @@ shape = SubResource("RectangleShape2D_qxy0u")
 stream = ExtResource("10_iav0o")
 volume_db = -5.0
 autoplay = true
+bus = &"Ambient"
 
 [node name="creak" type="AudioStreamPlayer" parent="." unique_id=1188854656]
 stream = ExtResource("10_excbq")
 volume_db = -17.0
+bus = &"creak"
 script = ExtResource("10_qxy0u")
